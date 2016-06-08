@@ -1,0 +1,17 @@
+﻿<ul id="pagenavigation">
+    @if (SessionVars.Item.Team.IsAdmin)
+    {
+        <li class="col-xs-4"><a href="#Par3Entry" class="active"><i class="fa fa-map-pin"></i><br /><span>Scorecard</span></a></li>
+        <li class="col-xs-4"><a href="#Leaderboard"><i class="fa fa-trophy"></i><br /><span>Leaderboard</span></a></li>
+        <li class="col-xs-4"><a href="#Messaging"><i class="fa fa-bullhorn"></i><br /><span>Messaging</span></a></li>
+    }
+    else
+    {
+        <li class="col-xs-3"><a href="#Scorecard" class="active"><i class="fa fa-map-pin"></i><br /><span>Scorecard</span></a></li>
+        <li class="col-xs-3"><a href="#Yardage"><i class="fa fa-map"></i><br /><span>Yardage</span></a></li>
+        <li class="col-xs-3"><a href="#Leaderboard"><i class="fa fa-trophy"></i><br /><span>Leaderboard</span></a></li>
+        <li class="col-xs-3"><a href="#Messaging"><i class="fa fa-bullhorn"></i><br /><span>Messaging</span></a></li>
+    }
+</ul>
+
+<div class="clearfix"></div>

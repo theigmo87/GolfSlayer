@@ -1,0 +1,27 @@
+﻿<div id="Leaderboard" class="tabContent">
+    <h2 class="teamName">
+        2015 Guardian Cup Leaderboard
+    </h2>
+    <table class="table whiteFont">
+        <thead>
+            <tr>
+                <th class="text-center">Team Name</th>
+                <th class="text-center">Score</th>
+                <th class="text-center">Thru</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: leaderboardVM.TeamScores">
+            <tr>
+                <td class="text-center col-xs-4">
+                    <h3 data-bind="text:TeamName"></h3>
+                </td>
+                <td class="text-center col-xs-4">
+                    <h3 data-bind="text: ScoreDisplay, style: { color: ScoreDisplay() <= -1 ? 'red' : 'black' }"></h3>
+                </td>
+                <td class="text-center col-xs-4">
+                    <h3 class="form-control" data-bind="text:Thru" style="max-width: 75px; margin: 0px auto;"></h3>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

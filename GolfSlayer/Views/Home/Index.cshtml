@@ -1,0 +1,24 @@
+﻿@{
+    Layout = Url.Content("~/Views/Shared/_LandingLayout.cshtml");
+    ViewBag.Title = "Home Page";
+}
+
+<div>
+    <img src="@Url.Content("~/Content/logos/Guardian_Cup_Logo.svg")" class="landing-svg" alt="Guardian Cup logo">
+</div>
+
+<div class="row home-buttons-wrapper col-xs-12 col-sm-6 col-sm-offset-3" style="margin-right: 0px; padding-right: 0px;">
+    <div class="col-xs-6 col-sm-3">
+        <a href="~/Home/SignIn" class="home-buttons"><img src="@Url.Content("~/Content/images/homebtn-signin.png")" /></a>
+    </div>
+    <div class="col-xs-6 col-sm-3">
+        <a href="@GlobalSettings.DonateURL" class="home-buttons" target="_blank"><img src="@Url.Content("~/Content/images/homebtn-donate.png")" /></a>
+    </div>
+    <div class="col-xs-6 col-sm-3">
+        <a href="@GlobalSettings.ChampionsURL" class="home-buttons" target="_blank"><img src="@Url.Content("~/Content/images/homebtn-champions.png")" /></a>
+    </div>
+    <div class="col-xs-6 col-sm-3">
+        <a href="@GlobalSettings.SafeHomesURL" class="home-buttons"><img src="@Url.Content("~/Content/images/homebtn-safehomes.png")" /></a>
+    </div>
+    <div class="clearfix"></div>
+</div>

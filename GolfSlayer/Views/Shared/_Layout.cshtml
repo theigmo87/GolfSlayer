@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardian Cup Guide | @ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+</head>
+<body class="default_body">
+    @if (SessionVars.Item.Team != null)
+    {
+        <div class="admin-message row" style="position:fixed;">
+            <a id="admin-message-close"><i class="fa fa-times-circle-o text-danger fa-lg"></i></a>
+            <div id="admin-message-logo" class="hidden-xs col-sm-3"><img src="@Url.Content("~/Content/logos/admin-message.svg")" /></div>
+            <div id="admin-message-text" class="col-sm-9"></div>
+            <div class="clearfix"></div>
+        </div>
+    }
+    <div id="page-wrapper">
+        @Html.Partial("Partials/_PartialNavbar")
+
+        @Html.Partial("Partials/_PartialSubNav")
+
+        <div class="container body-content @ViewBag.Background">
+            @RenderBody()
+        </div>
+
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/signalR")
+        @RenderSection("scripts", required: false)
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardian Cup Guide | @ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+</head>
+<body class="default_body">
+    @if (SessionVars.Item.Team != null)
+    {
+        <div class="admin-message"></div>
+    }
+    <div id="page-wrapper">
+        @Html.Partial("Partials/_PartialNavbar")
+
+        @if (SessionVars.Item.Team != null)
+        {
+            @Html.Partial("Partials/_PartialSubNav")
+        }
+
+        <div class="container body-content readableBG">
+            @RenderBody()
+        </div>
+
+    </div>
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/signalR")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

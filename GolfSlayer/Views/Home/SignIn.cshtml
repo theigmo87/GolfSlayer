@@ -1,0 +1,24 @@
+﻿@model GolfSlayer.Models.SignIn
+
+@{
+    Layout = Url.Content("~/Views/Shared/_StrippedLayout.cshtml");
+    ViewBag.Title = "Sign In";
+}
+
+@using (Html.BeginForm("SignIn", "Home", FormMethod.Post, new { @class = "form-vertical", role = "form" }))
+{
+    <div class="form-group myforms">
+        @Html.ValidationSummary(true)
+        <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 text-center">
+            <h4>
+                @Html.LabelFor(model => model.PIN, new { @class = "control-label whiteFont" })
+            </h4>
+            @Html.PasswordFor(model => model.PIN, new { @class = "form-control text-center", @placeholder = "please enter your pin" })
+            @Html.ValidationMessage("PIN")
+            <br />
+            <input type="submit" value="Enter" class="btn btn-lrg btn-sign-in" />
+        </div>
+        <div class="clearfix"></div>
+    </div>
+}
+

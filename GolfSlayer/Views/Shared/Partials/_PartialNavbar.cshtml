@@ -1,0 +1,23 @@
+﻿<div class="navbar navbar-inverse navbar-fixed-top" style="padding: 5px 0px;">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink(" ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("More about The Guardian Cup", "About", "Information")</li>
+                <li>@Html.ActionLink("More about SafeHomes", "AboutSH", "Information")</li>
+                <li>@Html.ActionLink("Our Sponsors", "Sponsors", "Information")</li>
+                <li>@Html.ActionLink("Tournament Rules", "Rules", "Information")</li>
+                <li>@Html.ActionLink("Contact Us", "Contact", "Information")</li>
+                <li>@Html.ActionLink("Sign Out", "SignOut", "Home")</li>
+            </ul>
+        </div>
+    </div>
+</div>

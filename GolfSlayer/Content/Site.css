@@ -1,0 +1,354 @@
+﻿.default_body {
+  background: url('images/champions_1.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.golfers_body {
+  background: url('images/champions_6.jpg') no-repeat center center fixed;
+}
+a {
+  -moz-transition: all 0.35s ease-in-out;
+  -ms-transition: all 0.35s ease-in-out;
+  -o-transition: all 0.35s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+ul li {
+  list-style: none;
+}
+.landing-svg {
+  position: absolute;
+  top: 5%;
+  width: 80%;
+  z-index: -1;
+  left: 10%;
+  max-height: 40%;
+}
+/*.landing-svg {
+    height: 75%;
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    z-index: -1;
+}*/
+/*.landing-svg {
+    height: 80%;
+    position: fixed;
+    top: 20%;
+    width: 100%;
+    z-index: -1;
+}*/
+.benefiting-svg-wrapper {
+  height: 10%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1%;
+}
+.benefiting-svg {
+  height: 100%;
+  margin: 0px auto;
+  width: 100%;
+}
+.home-buttons-wrapper {
+  position: absolute;
+  top: 42%;
+}
+.home-buttons {
+  display: block;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.6);
+  margin: 20% auto;
+}
+.home-buttons:hover {
+  background: #ffffff;
+}
+#pagenavigation {
+  position: relative;
+  top: 50px;
+  padding: 0px;
+  width: 100%;
+}
+#pagenavigation li {
+  float: left;
+  background: #e1bd5c;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+#pagenavigation li a {
+  color: #221f1f;
+  font-size: 1.75em;
+  text-align: center;
+  display: block;
+}
+#pagenavigation li a span {
+  font-size: .4em;
+  display: block;
+}
+#pagenavigation li a:hover {
+  color: #f7f7f7;
+  text-decoration: none;
+}
+.body-content {
+  margin-top: 50px;
+  padding: 15px;
+}
+.myforms {
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-top: 20px;
+  padding: 40px 0px 20px 0px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+.readableBG {
+  background: rgba(255, 255, 255, 0.8);
+  -moz-box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 0 0 4px 4px;
+}
+/*#region Typography*/
+.whiteFont {
+  color: #ffffff !important;
+}
+/*#endregion*/
+#Scorecard .teamName,
+#Leaderboard .teamName {
+  color: #fff;
+  float: left;
+  padding-right: 50px;
+  margin-right: -50px;
+}
+#Scorecard .totalScore,
+#Leaderboard .totalScore {
+  color: #b0f46e;
+  float: right;
+  width: 50px;
+  text-align: right;
+}
+#Scorecard .table,
+#Leaderboard .table {
+  width: 100%;
+  border: none;
+}
+#Scorecard .table input[type=number],
+#Leaderboard .table input[type=number] {
+  color: #333;
+  text-align: center;
+  padding: 5px 15px;
+  font-size: 24px;
+  display: inline;
+  -moz-appearance: textfield;
+}
+#Scorecard .table input[type=number]::-webkit-inner-spin-button,
+#Leaderboard .table input[type=number]::-webkit-inner-spin-button,
+#Scorecard .table input[type=number]::-webkit-outer-spin-button,
+#Leaderboard .table input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+#Scorecard .table tr,
+#Leaderboard .table tr {
+  border: none;
+}
+#Scorecard .table tr:nth-child(4n+1),
+#Leaderboard .table tr:nth-child(4n+1),
+#Scorecard .table tr:nth-child(4n+2),
+#Leaderboard .table tr:nth-child(4n+2) {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+#Scorecard .table tr:nth-child(4n+3),
+#Leaderboard .table tr:nth-child(4n+3),
+#Scorecard .table tr:nth-child(4n),
+#Leaderboard .table tr:nth-child(4n) {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#Scorecard .table tr td,
+#Leaderboard .table tr td {
+  border: none;
+  vertical-align: middle;
+}
+.admin-message {
+  position: absolute;
+  top: -9999px;
+  /*top: 20%;*/
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #f7f7f7;
+  padding: 15px;
+  margin: 2%;
+  width: 96%;
+  border-radius: 4px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+.admin-message #admin-message-close {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+}
+.admin-message #admin-message-logo img {
+  max-height: 12em;
+}
+.sponsorListHolder {
+  margin-bottom: 30px;
+  opacity: 1;
+  float: left;
+  border-radius: 4px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 100%;
+}
+.sponsor {
+  width: 180px;
+  height: 180px;
+  float: left;
+  margin: 4px;
+  position: relative;
+  cursor: pointer;
+}
+@media (max-width: 480px) {
+  .sponsor {
+    width: 100%;
+  }
+}
+.sponsorFlip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.sponsorFlip:hover {
+  border: 1px solid #999;
+  /* CSS3 inset shadow: */
+  -moz-box-shadow: 0 0 30px #999 inset;
+  -webkit-box-shadow: 0 0 30px #999 inset;
+  box-shadow: 0 0 30px #999 inset;
+}
+.sponsorFlip img {
+  /* Centering the logo image in the middle of the sponsorFlip div */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -70px 0 0 -70px;
+}
+.sponsorData {
+  /* Hiding the .sponsorData div */
+  display: none;
+}
+.sponsorDescription {
+  font-size: 11px;
+  padding: 50px 10px 20px 20px;
+  font-style: italic;
+}
+.sponsorURL {
+  font-size: 10px;
+  font-weight: bold;
+  padding-left: 20px;
+}
+.ribbon {
+  position: relative;
+  color: #fff;
+  background: #640983;
+  font-size: 1em;
+  float: left;
+  clear: both;
+  padding: 10px 10px 10px 20px;
+  margin-left: -10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-shadow: 0 -1px #480065, 0 1px #cfa1df;
+  z-index: 1000;
+  -moz-box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+.ribbon:before {
+  content: " ";
+  background: url(http://www.guardiancup.com/images/ribbon.png);
+  display: block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-bottom: -10px;
+  z-index: -1;
+}
+ul.messagingWrapper li.leftChat {
+  position: relative;
+  padding: 15px;
+  margin: 0 0 2em 0em;
+  color: #fff;
+  background: rgba(7, 86, 152, 0.8);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  float: left;
+  width: 65%;
+}
+ul.messagingWrapper li:after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  /* value = - border-top-width - border-bottom-width */
+  left: 50%;
+  /* controls horizontal position */
+  border-width: 15px 15px 0;
+  /* vary these values to change the angle of the vertex */
+  border-style: solid;
+  border-color: rgba(7, 86, 152, 0.8) transparent;
+  /* reduce the damage in FF3.0 */
+  display: block;
+  width: 0;
+}
+ul.messagingWrapper li.rightChat {
+  position: relative;
+  padding: 15px;
+  margin: 0 3em 2em 0;
+  color: #fff;
+  background: rgba(152, 7, 7, 0.8);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  float: right;
+  width: 65%;
+}
+ul.messagingWrapper li.rightChat:after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  /* value = - border-top-width - border-bottom-width */
+  left: 50%;
+  /* controls horizontal position */
+  border-width: 15px 15px 0;
+  /* vary these values to change the angle of the vertex */
+  border-style: solid;
+  border-color: rgba(152, 7, 7, 0.8) transparent;
+  /* reduce the damage in FF3.0 */
+  display: block;
+  width: 0;
+}
+.tabContent:not(:first-of-type) {
+  display: none;
+}
+.active {
+  background-color: #222222;
+}
+.active * {
+  color: #F7F7F7;
+}
+/*# sourceMappingURL=Site.css.map */

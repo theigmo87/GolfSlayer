@@ -1,0 +1,102 @@
+﻿<div id="Messaging" class="tabContent">
+    <div id="Controls">
+        <select id="ChatRoomsSelect">
+            <option value="">Choose A Chat Room:</option>
+            <option value="GeneralChat">General Chat</option>
+            <option value="AdminChat">Guardian Cup</option>
+        </select>
+    </div>
+    <div id="ChatWindows" class="readableBG" style="padding: 2em;">
+        <div id="GeneralChat" class="chatRoom" style="display:none;">
+            <h3>General Chat</h3>
+            <ul class="messagingWrapper"></ul>
+            <div class="clearfix"></div>
+        </div>
+        <div id="AdminChat" class="chatRoom" style="display:none;">
+            <h3>Messages From The Guardian Cup</h3>
+            <ul class="messagingWrapper"></ul>
+            <div class="clearfix"></div>
+        </div>
+        <div id="ChatInputControls" style="display:none;">
+            <hr style="display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;" />
+            <div class="col-xs-12 col-sm-10 col-md-11">
+                <input type="text" id="ChatInput" style="width: 100%;" />
+            </div>
+            <div class="col-xs-12 col-sm-2 col-md-1">
+                <input type="button" id="ChatSubmit" value="Send" class="btn btn-success" style="width: 100%; padding: .25em 0; margin: .25em;" />
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#ChatRoomsSelect').change(function () {
+            var room = $(this).find("option:selected").val();
+            $(".chatRoom").hide();
+            $("#ChatInputControls").hide();
+            if (room != "") {
+                $("#" + room).show();
+                if((room == "AdminChat" && @Json.Encode(SessionVars.Item.Team.IsAdmin)) || (room != "AdminChat")) {
+                    $("#ChatInputControls").show();
+                }
+            }
+        });
+    });
+</script>
+<script>
+    $(function () {
+        var chat = $.connection.chatHub;
+        chat.client.addNewMessageToPage = function (name, message, room) {
+            if(room == "AdminChat" && !@Json.Encode(SessionVars.Item.Team.IsAdmin)) {
+                AdminMessage(htmlEncode(message));
+            }
+            addMessage(name,message,room);
+        };
+        chat.client.getCurrentMessages = function(Messages) {
+            for(i = 0; i < Messages.length; i++) {
+                addMessage(Messages[i].Name, Messages[i].Message, Messages[i].Room);
+            }
+        };
+        function sendMessage() {
+            var room = $("#ChatRoomsSelect").find("option:selected").val();
+            var team = "@SessionVars.Item.Team.Name";
+            var message = $("#ChatInput").val();
+            if(message.length > 0) {
+                chat.server.send(team, message, room);
+            }
+            $("#ChatInput").val('').focus();
+        }
+        function addMessage(name, message, room) {
+            var liClass = ((name == "@SessionVars.Item.Team.Name") ? "leftChat" : "rightChat");
+            $("#" + room + " ul").append("<li class='" + liClass + "'><strong>" + htmlEncode(name) + "</strong>: " + htmlEncode(message) + "</li>");
+        }
+        $.connection.hub.start().done(function () {
+            chat.server.getCachedMessages();
+            $("#ChatSubmit").click(function () {
+                sendMessage();
+            });
+            $("#ChatInput").pressEnter(function() {
+                sendMessage();
+            });
+        });
+        });
+</script>
+<script type="text/javascript">
+
+    function htmlEncode(value) {
+        var encodedValue = $('<div />').text(value).html();
+        return encodedValue;
+    }
+    $.fn.pressEnter = function(fn) {
+        return this.each(function() {
+            $(this).bind('enterPress', fn);
+            $(this).keyup(function(e) {
+                if(e.keyCode == 13)
+                {
+                    $(this).trigger("enterPress");
+                }
+            });
+        });
+    }
+</script>

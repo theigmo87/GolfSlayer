@@ -1,0 +1,31 @@
+﻿@{
+    Layout = Url.Content("~/Views/Shared/_Layout.cshtml");
+    ViewBag.Title = "Home Page";
+}
+
+<div id="page_holder">
+    @if (SessionVars.Item.Team.IsAdmin)
+    {
+        @Html.Partial("Partials/_PartialPar3Entry")
+    }
+    else
+    {
+        @Html.Partial("Partials/_PartialScorecard")
+
+        @Html.Partial("Partials/_PartialYardage")
+    }
+    
+    @Html.Partial("Partials/_PartialMessaging")
+
+    @Html.Partial("Partials/_PartialLeaderboard")
+</div>
+
+@section scripts{
+    <script>
+        var _teamID = @(SessionVars.Item.Team.ID);
+    </script>
+    <script src="~/signalr/hubs"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/knockout/knockout-3.1.0.js"></script>
+    <script src="~/Scripts/knockout.mapping-latest.js"></script>
+    <script src="~/Scripts/GolfSlayer.js"></script>
+}

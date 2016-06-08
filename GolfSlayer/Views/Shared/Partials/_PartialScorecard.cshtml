@@ -1,0 +1,34 @@
+﻿<div id="Scorecard" class="tabContent">
+    <h2 class="teamName">
+        @SessionVars.Item.Team.Name
+    </h2>
+    <h2 class="totalScore">
+        <span data-bind="text: scoresVM.totalScore, style: { color: scoresVM.totalScore() <= -1 ? 'red' : 'black' }"></span>
+    </h2>
+    <div class="row">
+        <table class="table whiteFont">
+            <tbody data-bind=" foreach: scoresVM.scores">
+                <tr class="ScoreRow">
+                    <td class="text-right" style="width:40%">
+                        <span style="font-size:10px;">Hole</span> <span data-bind="text:HoleNumber"></span>
+                    </td>
+                    <td class="text-center" style="width:20%">
+                        <input class="form-control" style="width:75px; padding:0 10px;" type="number" data-bind="value:Value, formatScore:Value, event: { blur: scoresVM.saveScore }, onEnterPress:scoresVM.saveScore" name="score" />
+                    </td>
+                    <td class="tet-left" style="width:40%">
+                        <span data-bind="text:ParValueDisplay"></span>                                       
+                    </td>
+                </tr>
+                <tr data-bind="visible: Closest.HasClosest">
+                    <td colspan="3" class="text-center">
+                        <span data-bind="text:Closest.ClosestName"></span>,: <span data-bind="text:Closest.ClosestDistanceDisplay"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+ @*<!-- ko if: Closest.HasClosest -->
+
+<span data-bind="text:Closest.ClosestName"></span> - <span data-bind="text:Closest.ClosestDistanceDisplay"></span>
+<!-- /ko -->*@        
